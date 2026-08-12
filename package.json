@@ -4,11 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev:vite": "vite",
+    "dev:fastapi": "uv run dev",
+    "dev": "concurrently -n vite,fastapi --hide vite \"npm run dev:vite\" \"npm run dev:fastapi\"",
+    "build:vite": "vite build",
+    "build:fastapi": "uv run build",
+    "build": "echo \"open http://localhost:8000/ \n\" && concurrently \"npm run build:vite\" \"npm run build:fastapi\""
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "concurrently": "^10.0.4",
+    "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
     "vite": "^8.2.0"
   }

@@ -9,6 +9,9 @@ wheels/
 # Virtual environments
 .venv
 
+# Vite build output
+src/static/dist/
+
 # Logs
 logs
 *.log
