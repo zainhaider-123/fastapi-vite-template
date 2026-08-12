@@ -2,13 +2,16 @@
 name = "fastapi_vite_template"
 version = "0.1.0"
 description = "FastAPI Vite Template"
-readme = "README.md"
 requires-python = ">=3.12"
 dependencies = ["fastapi>=0.141.1", "jinja2>=3.1.6", "uvicorn>=0.52.1"]
 
 [project.scripts]
+dev = "main:main"
 fastapi_vite_template = "main:main"
 
 [build-system]
 requires = ["uv_build>=0.12.1,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "app"

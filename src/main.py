@@ -1,16 +1,17 @@
+from pathlib import Path
+
 import uvicorn
 
-from app.app import app
-
-__all__ = ["app", "main"]
+ROOT_DIR = Path(__file__).resolve().parent
 
 
 def main() -> None:
     uvicorn.run(
-        "main:app",
+        "app.app:app",
         host="0.0.0.0",
         port=8000,
         reload=True,
+        reload_dirs=[str(ROOT_DIR)],
     )
 
 
