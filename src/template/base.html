@@ -9,8 +9,15 @@
   <link rel="stylesheet" href="{{ url_for('static', path='dist/main.css') }}" />
 </head>
 
-<body>
-  <main>
+<body class="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased">
+  <div class="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_at_top,_#4c1d9540,_transparent_55%)]"></div>
+  <header class="relative border-b border-white/10">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+      <p class="text-sm font-medium tracking-wide text-violet-300">FastAPI + Vite</p>
+      <p class="text-xs text-slate-400">Jinja templates · Tailwind · TypeScript</p>
+    </div>
+  </header>
+  <main class="relative mx-auto max-w-5xl px-6 py-16">
     {% block content %}{% endblock %}
   </main>
   <script type="module" src="{{ url_for('static', path='dist/main.js') }}"></script>
