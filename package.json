@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:vite": "vite",
-    "dev:fastapi": "uv run dev",
-    "dev": "concurrently -n vite,fastapi --hide vite \"npm run dev:vite\" \"npm run dev:fastapi\"",
-    "build:vite": "vite build",
-    "build:fastapi": "uv run build",
-    "build": "echo \"open http://localhost:8000/ \n\" && concurrently \"npm run build:vite\" \"npm run build:fastapi\""
+    "dev:vite": "node init && vite",
+    "dev:fastapi": "node init && uv run dev",
+    "dev": "node init && concurrently -n vite,fastapi --hide vite \"npm run dev:vite\" \"npm run dev:fastapi\"",
+    "build:vite": "node init && vite build",
+    "build:fastapi": "node init && uv run build",
+    "build": "node init && echo \"open http://localhost:8000/ \n\" && concurrently \"npm run build:vite\" \"npm run build:fastapi\""
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
